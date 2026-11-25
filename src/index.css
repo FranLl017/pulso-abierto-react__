@@ -1,0 +1,401 @@
+
+/* ==============================
+   ESTILOS GENERALES
+============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #080d19, #101b30);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 45px 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  color: #38bdf8;
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.header p {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+/* ==============================
+   SECCIÓN DE CRIPTOMONEDAS
+============================== */
+
+.crypto-section {
+  background-color: #111c30;
+  border: 1px solid #263750;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.crypto-section h2 {
+  font-size: 1.5rem;
+  color: #f1f5f9;
+  margin-bottom: 25px;
+}
+
+/* ==============================
+   FORMULARIO DE BÚSQUEDA
+============================== */
+
+.search-controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 18px;
+  align-items: end;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #0b1425;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #f1f5f9;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+  color: #64748b;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* ==============================
+   ERRORES DE VALIDACIÓN
+============================== */
+
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"] {
+  border: 2px solid #ef4444;
+  background-color: #2b1720;
+}
+
+.form-group input[aria-invalid="true"]:focus,
+.form-group select[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.form-group [role="alert"] {
+  color: #fca5a5;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+/* ==============================
+   BOTONES
+============================== */
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0284c7;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #0369a1;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 3px solid #7dd3fc;
+  outline-offset: 3px;
+}
+
+/* ==============================
+   RESULTADOS
+============================== */
+
+.results-count {
+  color: #94a3b8;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.crypto-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ==============================
+   TARJETAS DE CRIPTOMONEDAS
+============================== */
+
+.crypto-card {
+  background: linear-gradient(145deg, #1a2941, #142137);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.crypto-card:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+}
+
+.crypto-card h3 {
+  color: #f8fafc;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.crypto-card p {
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.crypto-card .price {
+  color: #38bdf8;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 18px 0;
+}
+
+.crypto-card button {
+  width: 100%;
+}
+
+/* ==============================
+   MENSAJES DE ESTADO
+============================== */
+
+[role="status"] {
+  color: #cbd5e1;
+  margin: 15px 0;
+}
+
+[role="alert"] {
+  color: #fca5a5;
+}
+
+/* ==============================
+   CRIPTOMONEDA SELECCIONADA
+============================== */
+
+.selected-crypto {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #102d3d;
+  border: 1px solid #0ea5e9;
+  border-radius: 10px;
+}
+
+.selected-crypto p {
+  color: #bae6fd;
+  margin-bottom: 10px;
+}
+
+.selected-crypto button {
+  margin-top: 8px;
+  background-color: #334155;
+}
+
+.selected-crypto button:hover {
+  background-color: #475569;
+}
+
+/* ==============================
+   PIE DE PÁGINA
+============================== */
+
+.footer {
+  text-align: center;
+  margin-top: 35px;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* ==============================
+   DISEÑO RESPONSIVE
+============================== */
+
+@media (max-width: 850px) {
+  .crypto-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-controls button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 94%;
+    padding: 25px 0;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .crypto-section {
+    padding: 20px 15px;
+  }
+
+  .crypto-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .crypto-list {
+    grid-template-columns: 1fr;
+  }
+
+  .search-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .search-controls button {
+    grid-column: auto;
+    width: 100%;
+  }
+}
+
+/* ==============================
+   ENLACES DE DETALLE
+============================== */
+
+.detail-link {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #075985;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 8px 0 15px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.detail-link:hover {
+  background-color: #0284c7;
+  transform: translateY(-2px);
+}
+
+.detail-link:focus-visible {
+  outline: 3px solid #7dd3fc;
+  outline-offset: 3px;
+}
+
+/* ==============================
+   PÁGINA DE DETALLE
+============================== */
+
+.detail-section {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.detail-information {
+  background-color: #0b1425;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.detail-information p {
+  color: #cbd5e1;
+  margin-bottom: 15px;
+}
+
+.detail-information p:last-child {
+  margin-bottom: 0;
+}
+
+.detail-information strong {
+  color: #38bdf8;
+}
+
+/* ==============================
+   PÁGINA 404
+============================== */
+
+.not-found {
+  text-align: center;
+  max-width: 650px;
+  margin: 50px auto;
+}
+
+.not-found h1 {
+  color: #38bdf8;
+  margin-bottom: 18px;
+}
+
+.not-found p {
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
