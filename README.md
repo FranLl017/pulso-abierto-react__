@@ -1,75 +1,99 @@
-# React + TypeScript + Vite
+# Pulso Abierto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Pulso Abierto es una aplicación web desarrollada con React y TypeScript que permite consultar los precios de distintas criptomonedas, visualizar información detallada y guardar criptomonedas favoritas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+La aplicación utiliza la API de CoinGecko para obtener los precios actualizados de Bitcoin, Ethereum y Solana.
 
-## React Compiler
+## Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- React Router
+- CSS
+- Zod para la validación de formularios
+- Vitest para las pruebas automatizadas
+- ESLint para el análisis del código
+- API de CoinGecko
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Para descargar e instalar las dependencias del proyecto, ejecutar:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Ejecutar en desarrollo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Para iniciar la aplicación en modo desarrollo:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+## Pruebas automatizadas
+
+Para ejecutar las pruebas:
+
+```bash
+npm run test:run
+```
+
+## Análisis del código
+
+Para ejecutar ESLint:
+
+```bash
+npm run lint
+```
+
+## Generar el build de producción
+
+Para compilar la aplicación:
+
+```bash
+npm run build
+```
+
+## Comprobar la versión de producción
+
+Después de generar el build, ejecutar:
+
+```bash
+npm run preview
+```
+
+## Despliegue
+
+La aplicación se encuentra publicada en Vercel:
+
+https://pulso-abierto-react-eight.vercel.app
+
+El código fuente se encuentra disponible en GitHub:
+
+https://github.com/FranLl017/pulso-abierto-react__
+
+## Mejora de mantenibilidad
+
+**Problema identificado:**
+
+En el servicio encargado de consultar los precios de las criptomonedas se repetía manualmente la estructura de los objetos de Bitcoin, Ethereum y Solana.
+
+**Cambio realizado:**
+
+Se modificó el archivo `src/services/CryptoService.ts` para organizar los datos básicos de las criptomonedas en una lista y utilizar el método `map()` para generar los resultados con sus respectivos precios.
+
+Esta modificación permite evitar la repetición de código y facilita el mantenimiento del servicio.
+
+**Comprobaciones realizadas:**
+
+Después de realizar el cambio se ejecutaron las siguientes comprobaciones:
+
+- `npm run test:run`: las pruebas automatizadas finalizaron correctamente.
+- `npm run build`: el proyecto compiló correctamente para producción.
+- `npm run lint`: el análisis del código finalizó correctamente.
+
+También se comprobó que la aplicación continúa funcionando y mostrando los precios de las criptomonedas correctamente.
