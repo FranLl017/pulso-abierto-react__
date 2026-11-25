@@ -4,7 +4,7 @@
 
 Pulso Abierto es una aplicación web desarrollada con React y TypeScript que permite consultar los precios de distintas criptomonedas, visualizar información detallada y guardar criptomonedas favoritas.
 
-La aplicación utiliza la API de CoinGecko para obtener los precios actualizados de Bitcoin, Ethereum y Solana.
+La aplicación utiliza la API de CoinGecko para obtener los precios de Bitcoin, Ethereum y Solana.
 
 ## Tecnologías utilizadas
 
@@ -20,7 +20,7 @@ La aplicación utiliza la API de CoinGecko para obtener los precios actualizados
 
 ## Instalación
 
-Para descargar e instalar las dependencias del proyecto, ejecutar:
+Para instalar las dependencias del proyecto, ejecutar:
 
 ```bash
 npm install
@@ -97,3 +97,19 @@ Después de realizar el cambio se ejecutaron las siguientes comprobaciones:
 - `npm run lint`: el análisis del código finalizó correctamente.
 
 También se comprobó que la aplicación continúa funcionando y mostrando los precios de las criptomonedas correctamente.
+
+## Verificación final
+
+**Pruebas ejecutadas:**
+
+- `npm run test:run`: pruebas automatizadas ejecutadas correctamente.
+- `npm run lint`: análisis del código sin errores.
+- `npm run build`: compilación de producción exitosa.
+
+**Build:** generado correctamente en la carpeta `dist`.
+
+**Preview:** comprobado mediante `npm run preview`.
+
+**Despliegue:** realizado en Vercel y publicado mediante una URL pública.
+
+**Fecha de verificación:** 25/11/2026.
